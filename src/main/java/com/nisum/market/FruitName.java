@@ -7,6 +7,7 @@ public enum FruitName {
             ("watermelon", Watermelon.class);
 
 
+
     private final String name;
     private final Class<? extends Fruit> classType;
 
