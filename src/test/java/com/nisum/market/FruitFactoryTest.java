@@ -1,10 +1,11 @@
 package com.nisum.market;
 
 
+import com.nisum.market.fruit.Fruit;
+import com.nisum.market.fruit.Watermelon;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -44,5 +45,15 @@ public class FruitFactoryTest {
 
 
         Fruit fruit = factory.getFruit(BANANA.getName());
+    }
+
+
+    @Test
+    public void shouldReturnWatermelonUsingFruitPerSeasonConstructor() throws Exception {
+        FruitFactory factory = new FruitFactory(FruitsPerSeason.class);
+
+        Fruit fruit = factory.getFruit(WATERMELON.getName());
+
+        assertThat(fruit, instanceOf(Watermelon.class));
     }
 }

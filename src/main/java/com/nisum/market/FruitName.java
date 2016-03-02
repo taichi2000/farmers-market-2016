@@ -1,6 +1,9 @@
 package com.nisum.market;
 
 
+import com.nisum.market.fruit.*;
+
+
 public enum FruitName {
 
     LEMON("lemon", Lemon.class),BANANA("banana", Banana.class),CHIRIMOYA("chirimoya", Chirimoya.class), WATERMELON

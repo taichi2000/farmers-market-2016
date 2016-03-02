@@ -1,6 +1,7 @@
 package com.nisum.market;
 
 
+import com.nisum.market.fruit.*;
 import org.junit.Before;
 import org.junit.Test;
 

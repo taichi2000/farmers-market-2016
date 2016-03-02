@@ -1,7 +1,10 @@
 package com.nisum.market;
 
 
+import com.nisum.market.fruit.Fruit;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +16,20 @@ public class FruitFactory {
     private HashMap<SeasonName,List<FruitName>> fruitAvailableOnSeason;
 
 
+    public FruitFactory(Class<FruitsPerSeason> fruitsPerSeason) {
+        season = SeasonName.SUMMER;
+        fruitAvailableOnSeason = new HashMap<SeasonName, List<FruitName>>();
+
+        for (FruitsPerSeason season : fruitsPerSeason.getEnumConstants()) {
+            FruitName[] fruits = season.getFruitNames();
+
+            List<FruitName> fruitNames = Arrays.asList(fruits);
+
+            fruitAvailableOnSeason.put(SeasonName.valueOf(season.name()), fruitNames);
+        }
+    }
+
+
     public FruitFactory(SeasonName season) {
         this.season = season;
 
@@ -20,6 +37,8 @@ public class FruitFactory {
         List<FruitName>fruitNames = new ArrayList<FruitName>();
         fruitNames.add(FruitName.BANANA);
         fruitNames.add(FruitName.CHIRIMOYA);
+        fruitNames.add(FruitName.LEMON);
+        fruitNames.add(FruitName.WATERMELON);
         fruitAvailableOnSeason.put(season,fruitNames);
     }
 

@@ -1,4 +1,7 @@
-package com.nisum.market;
+package com.nisum.market.fruit;
+
+
+import com.nisum.market.SeasonName;
 
 
 public interface Fruit {
